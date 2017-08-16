@@ -1,0 +1,48 @@
+{
+  "name": "ExpertiseSmallTalkShawn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small talk expertise",
+  "keywords": [
+    "expertise"
+  ],
+  "author": "Eyal Cohen <eyalco@il.ibm.com>",
+  "license": "Apache-2.0",
+  "main": "./index.js",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "cloudant": "^1.7.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.12.3",
+    "i18next": "^7.0.1",
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "morgan": "^1.8.1",
+    "nedb": "^1.8.0",
+    "swagger-express-mw": "^0.1.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.4",
+    "mocha": "^3.2.0",
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha 'test/**/*.js' && ./node_modules/jscs/bin/jscs . && ./node_modules/jshint/bin/jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/ConsumerIoT/ExpertiseSmallTalk.git"
+  },
+  "maintainers": [
+    {
+      "name": "Eyal Cohen",
+      "email": "eyalco@il.ibm.com"
+    }
+  ],
+  "engines": {
+    "node": "6.10.0"
+  }
+}

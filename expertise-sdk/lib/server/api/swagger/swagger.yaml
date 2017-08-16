@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Expertise REST API
+basePath: /v1/api
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /manifest:
+    x-swagger-router-controller: manifest
+    get:
+      tags: [Resources]
+      summary: Returns expertise manifest
+      description: Returns expertise manifest.
+      operationId: get
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/ManifestResponse"
+        "404":
+          description: Not found
+
+  /nlu:
+    x-swagger-router-controller: nlu
+    get:
+      tags: [Resources]
+      summary: Return natural language understanding resource
+      description: Returns natural language undertsaning data for the specified
+        engine type.
+      operationId: get
+      parameters:
+        - name: type
+          in: query
+          description: The type of the engine data to acquire
+          required: true
+          enum: [wcs,regexp,apiai,nlc]
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/NluResponse"
+        "404":
+          description: Not found
+
+  /intents:
+    x-swagger-router-controller: intents
+    get:
+      tags: [Resources]
+      summary: Return intents descriptors
+      description: ...
+      operationId: get
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/IntentsResponse"
+        "404":
+          description: Not found
+
+  /converse:
+    x-swagger-router-controller: converse
+    post:
+      tags: [Converse]
+      summary: Converse with expertise
+      description: Returns the expertise response to a user query
+      operationId: post
+      parameters:
+        - name: input
+          in: body
+          description: User query object.
+          required: true
+          schema:
+            $ref: '#/definitions/Converse'
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/ConverseResponse"
+
+  /healthcheck:
+    x-swagger-router-controller: healthcheck
+    get:
+      tags: [General]
+      summary: Expertise health check
+      description: Check if the experitse service is up or not
+      operationId: get
+      responses:
+        "200":
+          description: Success
+
+  /swagger:
+    x-swagger-pipe: swagger_raw
+
+# complex objects have schema definitions
+definitions:
+  ManifestResponse:
+    properties:
+      manifest:
+        type: object
+  NluResponse:
+    properties:
+      data:
+        type: object
+  IntentsResponse:
+    properties:
+      data:
+        type: object
+  Converse:
+    description: Conversation data
+  ConverseResponse:
+    properties:
+      data:
+        type: object

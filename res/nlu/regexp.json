@@ -1,0 +1,78 @@
+{
+	"intents" : [
+		{
+			"name" : ["testing"],
+			"grammar" : [
+				"Testing",
+				"Testing *"
+			]
+		},
+		{
+			"name" : ["hello"],
+			"grammar" : [
+				"Hi",
+				"Hi {name}"
+			]
+		},
+		{
+			"name" : ["thanks"],
+			"grammar" : [
+				"[Thanks|Thank you]"
+			]
+		},
+		{
+			"name" : ["goodbye"],
+			"grammar" : [
+				"[Goodbye|cu|see you]"
+			]
+		},
+		{
+			"name" : ["greetings"],
+			"grammar" : [
+				"$ good {@partOfDay}"
+			]
+		},
+		{
+			"name" : ["marry-me"],
+			"grammar" : [
+				"$ marry me"
+			]
+		},
+		{
+			"name" : ["how-are-you"],
+			"grammar" : [
+				"$ how are you",
+				"$ how are u"
+			]
+		},
+		{
+			"name" : ["do-you"],
+			"grammar" : [
+				"[Do|can] you {doYou}"
+			]
+		},
+		{
+			"name" : ["you-are"],
+			"grammar" : [
+				"You are {youAre}"
+			]
+		}
+	],
+
+	"entities" : {
+		"doYou" : [
+			"love", "hate", "like", "drink", "kiss", "speak", "move"
+		],
+		"youAre" : [
+			"drunk", "annoying", "bad", "boring", "busy", "chatbot", "clever", "crazy", "fired",
+			"funny", "good", "my friend", "not my friend", "offence", "real", "right", "stupid",
+			"ugly", "happy"
+		]
+	},
+
+	"synonyms" : [
+		[ "hi", "hello"	],
+		[ "cu", "see you", "see u" ],
+		[ "goodbye", "bye", "bye bye" ]
+	]
+}

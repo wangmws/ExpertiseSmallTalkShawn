@@ -1,0 +1,18 @@
+{
+  "name" : "ExpertiseSmallTalkShawn",
+  "description": "ExpertiseSmallTalkShawn",
+  "private": false,
+  "author" : "Eyal Cohen",
+  "version" : "0.0.1",
+  "license" : "Apache-2.0",
+  "threshold": 0.85,
+  "languages": [
+    "en-US", "de-DE"
+  ],
+  "tags": [
+    "small-talk"
+  ],
+  "nlu": [
+    "regexp"
+  ]
+}
