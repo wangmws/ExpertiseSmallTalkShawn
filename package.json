@@ -32,10 +32,6 @@
     "start": "node index.js",
     "test": "mocha 'test/**/*.js' && ./node_modules/jscs/bin/jscs . && ./node_modules/jshint/bin/jshint ."
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.ibm.com/ConsumerIoT/ExpertiseSmallTalk.git"
-  },
   "maintainers": [
     {
       "name": "Eyal Cohen",
